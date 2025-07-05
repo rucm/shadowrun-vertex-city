@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="900" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <!--
+    Vertex City Map v10 (Final Version)
+    - Adjusted district name positions to avoid overlapping with the Vertex Loop.
+    - Fine-tuned the internal layout of the legend.
+  -->
+  
+  <style>
+  <![CDATA[
+    .bg { fill: #0d1117; }
+    .firewall { stroke: #e06c75; stroke-width: 3; fill: none; stroke-dasharray: 15 8; animation: pulse 4s infinite; }
+    .water { fill: #1f2a40; }
+    .river-text { font-size: 20px; fill: #569cd6; font-style: italic; text-anchor: middle; }
+    
+    .district-area { fill-opacity: 0.2; stroke-width: 1.5; stroke-dasharray: 5 3; }
+    .area-d { fill: #c678dd; stroke: #c678dd; } /* Central Core */
+    .area-a { fill: #61afef; stroke: #61afef; } /* Uptown */
+    .area-b { fill: #98c379; stroke: #98c379; } /* Corporate Hive */
+    .area-c { fill: #d19a66; stroke: #d19a66; } /* Old Sector */
+    .area-e { fill: #e5c07b; stroke: #e5c07b; } /* Logistics Hub */
+    .area-f { fill: #be5046; stroke: #be5046; } /* Industrial Bay */
+    .area-g { fill: #abb2bf; stroke: #abb2bf; } /* Compiler Foundry */
+
+    .district-title { font-size: 22px; font-weight: bold; fill: #ffffff; text-anchor: middle; }
+    .district-subtitle { font-size: 14px; fill: #cccccc; text-anchor: middle; }
+    
+    .landmark-icon { font-size: 28px; text-anchor: middle; }
+    .landmark-label { font-size: 14px; fill: #f0f0f0; text-anchor: middle; }
+    
+    .vertex-loop { stroke: #569cd6; stroke-width: 12; fill: none; stroke-linecap: round; }
+    .loop-service-layer { stroke: #4d5b7a; stroke-width: 4; fill: none; }
+    .bridge { stroke: #7a8a9e; stroke-width: 8; fill: none; }
+
+    .legend-bg { fill: rgba(22, 27, 34, 0.9); stroke: #30363d; stroke-width: 1; }
+    .legend-title { font-size: 18px; fill: #c9d1d9; font-weight: bold; }
+    .legend-text { font-size: 14px; fill: #c9d1d9; }
+    .legend-icon { font-size: 18px; }
+
+    @keyframes pulse {
+      0% { stroke-opacity: 0.7; }
+      50% { stroke-opacity: 1; }
+      100% { stroke-opacity: 0.7; }
+    }
+  ]]>
+  </style>
+
+  <!-- === MAP BACKGROUND AND BORDERS === -->
+  <rect class="bg" width="1200" height="900" />
+  
+  <!-- === WATER BODIES === -->
+  <rect class="water" x="1000" y="80" width="185" height="770" />
+  <path class="water" d="M 40,450 H 1000 V 550 H 40 Z" />
+  <text class="river-text" x="520" y="505">データストリーム川 (Data Stream River)</text>
+  <path class="water" d="M1090,670 a 90 70 0 1 0 -0.1 0 Z" />
+
+  <!-- === DISTRICT AREAS === -->
+  <g id="districts">
+    <!-- North Shore -->
+    <path id="area-c" class="district-area area-c" d="M40,80 H320 V450 H40 Z" />
+    <path id="area-a" class="district-area area-a" d="M 360,80 H 670 V 200 H 500 V 450 H 360 V 80 Z" />
+    <path id="area-b" class="district-area area-b" d="M 670,80 H 980 V 450 H 840 V 200 H 670 V 80 Z" />
+    <path id="area-d" class="district-area area-d" d="M500,200 H840 V450 H500 Z" />
+    
+    <!-- South Shore -->
+    <path id="area-e" class="district-area area-e" d="M40,550 H600 V850 H40 Z" />
+    <path id="area-f" class="district-area area-f" d="M600,550 H1000 V850 H600 Z" />
+    
+    <!-- Compiler Foundry Island -->
+    <path id="area-g" class="district-area area-g" d="M1090,670 a 70 50 0 1 0 -0.1 0 Z" />
+  </g>
+
+  <!-- === VERTEX LOOP === -->
+  <g id="vertex-loop">
+    <path class="loop-service-layer" d="M 340,700 V 150 C 340,100 340,100 390,100 L 880,100 C 930,100 930,100 930,150 V 700 C 930,750 930,750 880,750 L 390,750 C 340,750 340,750 340,700 Z" transform="translate(0, 5)"/>
+    <path class="vertex-loop" d="M 340,700 V 150 C 340,100 340,100 390,100 L 880,100 C 930,100 930,100 930,150 V 700 C 930,750 930,750 880,750 L 390,750 C 340,750 340,750 340,700 Z" />
+  </g>
+
+  <!-- === BRIDGE to Compiler Foundry === -->
+  <line class="bridge" x1="1000" y1="670" x2="1020" y2="670"/>
+
+  <!-- === DISTRICT LABELS & LANDMARKS (ADJUSTED POSITIONS) === -->
+  <g id="labels-and-landmarks">
+    <!-- Central Core -->
+    <text class="district-title" x="670" y="415">(D) セントラル・コア</text>
+    <text class="district-subtitle" x="670" y="435">Central Core</text>
+    <text class="landmark-icon" x="670" y="325">🗼</text>
+    <text class="landmark-label" x="670" y="340">カーネル・アクシス</text>
+    
+    <!-- Uptown District -->
+    <text class="district-title" x="515" y="160">(A) アップタウン地区</text>
+    <text class="district-subtitle" x="515" y="180">Uptown District</text>
+    <text class="landmark-icon" x="430" y="300">🎭</text>
+    <text class="landmark-label" x="430" y="315">ヴァニティ・キャッシュ</text>
+    
+    <!-- Corporate Hive -->
+    <text class="district-title" x="825" y="160">(B) コーポレート・ハイヴ</text>
+    <text class="district-subtitle" x="825" y="180">Corporate Hive</text>
+    
+    <!-- Old Sector -->
+    <text class="district-title" x="180" y="120">(C) オールド・セクター</text>
+    <text class="district-subtitle" x="180" y="140">Old Sector</text>
+    <text class="landmark-icon" x="180" y="380">💀</text>
+    <text class="landmark-label" x="180" y="395">ディケイ・ヒープ</text>
+    
+    <!-- Logistics Hub -->
+    <text class="district-title" x="320" y="620">(E) ロジスティクス・ハブ</text>
+    <text class="district-subtitle" x="320" y="640">Logistics Hub</text>
+    <text class="landmark-icon" x="320" y="780">⚓</text>
+    <text class="landmark-label" x="320" y="795">ヌル・ポート</text>
+    
+    <!-- Industrial Bay -->
+    <text class="district-title" x="800" y="620">(F) インダストリアル・ベイ</text>
+    <text class="district-subtitle" x="800" y="640">Industrial Bay</text>
+    
+    <!-- Compiler Foundry -->
+    <text class="district-title" x="1090" y="640">(G) コンパイラ・</text>
+    <text class="district-title" x="1090" y="665">ファウンドリ</text>
+    <text class="landmark-icon" x="1090" y="610">🔬</text>
+  </g>
+
+  <rect class="firewall" x="15" y="15" width="1170" height="870" rx="30" />
+
+  <!-- === LEGEND (FINAL POSITION) === -->
+  <g id="legend" transform="translate(740, 750)">
+    <rect class="legend-bg" width="440" height="130" rx="10" />
+    <text class="legend-title" x="15" y="25">凡例 / Legend</text>
+    
+    <text class="legend-icon" x="25" y="50">🗼</text>
+    <text class="legend-text" x="50" y="50">カーネル・アクシス</text>
+    <text class="legend-icon" x="25" y="70">🎭</text>
+    <text class="legend-text" x="50" y="70">ヴァニティ・キャッシュ</text>
+    <text class="legend-icon" x="25" y="90">💀</text>
+    <text class="legend-text" x="50" y="90">ディケイ・ヒープ</text>
+    <text class="legend-icon" x="25" y="110">⚓</text>
+    <text class="legend-text" x="50" y="110">ヌル・ポート</text>
+    
+    <text class="legend-icon" x="230" y="50">🔬</text>
+    <text class="legend-text" x="255" y="50">コンパイラ・ファウンドリ</text>
+    
+    <line x1="230" y1="80" x2="250" y2="80" style="stroke:#569cd6; stroke-width:4;" />
+    <text class="legend-text" x="260" y="85">バーテックス・ループ</text>
+  </g>
+</svg>
