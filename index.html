@@ -127,6 +127,45 @@
 
         <hr class="section-divider" />
 
+        <section id="district-descriptions" class="my-12">
+            <h2 class="text-3xl font-bold text-center mb-8 text-glow">District Profiles</h2>
+            <p class="text-center max-w-2xl mx-auto mb-12 text-gray-300">
+                バーテックスシティの各地区は、それぞれ異なる機能、リスク、そして機会を持つ。ランナーはこれらの特性を理解し、任務に最適なエリアを選択する必要がある。
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="data-card rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-[#F42272] mb-2">D: セントラル・コア</h3>
+                    <p class="text-sm text-gray-300">都市の中心に位置し、Vertex DynamicsのAI中枢「カーネル・アクシス」が鎮座する。最も厳重に警備されたエリアで、最高レベルのセキュリティと監視が敷かれている。高価値のデータやシステムへのアクセスはここから行われるが、侵入は極めて困難。</p>
+                </div>
+                <div class="data-card rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-[#A80874] mb-2">A: アップタウン地区</h3>
+                    <p class="text-sm text-gray-300">富裕層が居住し、高級な商業施設や娯楽施設「ヴァニティ・キャッシュ」が集中するエリア。セキュリティは高いが、情報収集や社会的な潜入ミッションの機会が多い。煌びやかなホロ広告が特徴的。</p>
+                </div>
+                <div class="data-card rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-[#A80874] mb-2">B: コーポレート・ハイヴ</h3>
+                    <p class="text-sm text-gray-300">Vertex Dynamicsとその関連企業のオフィスビルが林立するビジネス街。厳格なプロトコルと高度なサイバーセキュリティが特徴。企業スパイやデータ窃盗のターゲットとなることが多い。</p>
+                </div>
+                <div class="data-card rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-[#4F0B5E] mb-2">C: オールド・セクター</h3>
+                    <p class="text-sm text-gray-300">都市の初期に開発された地区で、老朽化したインフラと低いセキュリティレベルが特徴。AIの監視が比較的緩く、非合法な活動やグリッチの温床となっている。腐敗したデータが溜まる「ディケイ・ヒープ」が存在する。</p>
+                </div>
+                <div class="data-card rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-[#F42272] mb-2">E: ロジスティクス・ハブ</h3>
+                    <p class="text-sm text-gray-300">都市の物流を担う巨大な貨物ターミナル。AIの管理が複雑に入り組んでおり、大量のデータと物資が流れる。高架下に広がる「ヌル・ポート」は、非合法な闇市場として知られている。</p>
+                </div>
+                <div class="data-card rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-[#A80874] mb-2">F: インダストリアル・ベイ</h3>
+                    <p class="text-sm text-gray-300">重工業施設や製造工場が集中する湾岸エリア。環境汚染が進んでおり、AIの監視も限定的。違法な製造や改造、物資の密輸など、危険だが高報酬の任務が多い。</p>
+                </div>
+                <div class="data-card rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-[#F42272] mb-2">G: コンパイラ・ファウンドリ</h3>
+                    <p class="text-sm text-gray-300">インダストリアル・ベイ沖の人工島に位置する、Vertex Dynamicsの最先端R&D施設。AI開発や新技術の研究が行われ、極秘データが保管されている。侵入は困難を極めるが、その価値は計り知れない。</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider" />
+
         <section id="north" class="my-12">
             <h2 class="text-3xl font-bold text-center mb-2 text-glow">The Northern Spire</h2>
             <p class="text-center max-w-2xl mx-auto mb-12 text-gray-300">
@@ -329,7 +368,7 @@
             labels: ['セントラル・コア', 'コーポレート・ハイヴ', 'アップタウン地区', 'オールド・セクター'],
             datasets: [{
                 label: 'セキュリティレベル (12段階)',
-                data: [12, 10, 8, 4], // Updated data for 12-point scale
+                data: [12, 11, 8, 4], // Updated data for 12-point scale
                 backgroundColor: ['#F42272', '#A80874', '#8A2BE2', '#4F0B5E'],
                 borderColor: '#FFFFFF',
                 borderWidth: 1
